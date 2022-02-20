@@ -31,7 +31,7 @@ db.connect(err => {
 // get user input
 function employerSearch() {
   inquirer.prompt({
-    type: "text",
+    type: "select",
     message: "What do you want to do?",
     name: "actionlist",
     // WHEN I start the application
