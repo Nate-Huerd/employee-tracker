@@ -69,7 +69,6 @@ router.post('/employees', ({ body }, res) => {
 
 // WHEN I choose to update an employee role
 // THEN I am prompted to select an employee to update and their new role and this information is updated in the database
-
 router.put('/employee:role_id', (req, res) => {
   const sql = `UPDATE employees SET role_id = ?
                 WHERE id = ?`;
