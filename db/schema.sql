@@ -1,12 +1,12 @@
 /* DROP TABLE IF EXISTS ; */
 
-CREATE TABLE department (
+CREATE TABLE departments (
   id INTEGER PRIMARY KEY,
   name VARCHAR(30) NOT NULL,
 );
 
 /* why is role not white? */
-CREATE TABLE role (
+CREATE TABLE roles (
   id INTEGER PRIMARY KEY,
   title VARCHAR(30),
   salary DECIMAl,
@@ -17,7 +17,7 @@ CREATE TABLE role (
     ON DELETE SET NULL
 );
 
-CREATE TABLE employee (
+CREATE TABLE employees (
     id INTEGER PRIMARY KEY,
     first_name VARCHAR(30),
     last_name VARCHAR(30),
