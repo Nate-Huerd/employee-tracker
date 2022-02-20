@@ -66,3 +66,26 @@ router.post('/employees', ({ body }, res) => {
     });
   });
 });
+
+// WHEN I choose to update an employee role
+// THEN I am prompted to select an employee to update and their new role and this information is updated in the database
+
+router.put('/employee:role_id', (req, res) => {
+  const sql = `UPDATE employees SET role_id = ?
+                WHERE id = ?`;
+  const params = [req.body.role_id, req.params.id];
+
+  db.query(sql, params, (err, result) => {
+    if (err) {
+      res.status(400).json({ error: err.message });
+    } else if (!result.affectedRows) {
+      res.json({ message: 'Employee not found' });
+    } else {
+      res.json({
+        message: 'success',
+        data: req.body,
+        changes: result.affectedRows
+      });
+    }
+  });
+});
