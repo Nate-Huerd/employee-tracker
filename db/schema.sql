@@ -10,7 +10,11 @@ CREATE TABLE role (
   id INTEGER PRIMARY KEY,
   title VARCHAR(30),
   salary DECIMAl,
-  department_id INTEGER
+  department_id INTEGER,
+  CONSTRAINT
+    FOREIGN KEY (department_id)
+    REFERENCES department(id)
+    ON DELETE SET NULL
 );
 
 CREATE TABLE employee (
@@ -18,5 +22,9 @@ CREATE TABLE employee (
     first_name VARCHAR(30),
     last_name VARCHAR(30),
     role_id INTEGER,
-    manager_id INTEGER
+    manager_id INTEGER,
+    CONSTRAINT
+      FOREIGN KEY (role_id)
+      REFERENCES role(id)
+      ON DELETE SET NULL
 );
