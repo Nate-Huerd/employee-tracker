@@ -1,7 +1,7 @@
 const express = require('express');
 const inquirer = require('inquirer');
 const router = express.Router();
-const db = require('../../config/connection');
+const db = require('./config/connection');
 
 // GET all employees
 // WHEN I choose to view all employees
@@ -88,3 +88,6 @@ router.put('/employee:role_id', (req, res) => {
     }
   });
 });
+
+
+module.exports = router;
