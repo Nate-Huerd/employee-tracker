@@ -23,27 +23,6 @@ router.get('/employee', (req, res) => {
   });
 });
 
-// employee department
-/*router.get('/employee:department_id', (req, res) => {
-  const sql = `SELECT employees.*, departments.name
-                AS department_name
-                FROM employees
-                LEFT JOIN departments
-                ON employees.department_id = departments_id`;
-  db.query(sql, (err, rows) => {
-    if (err) {
-      res.status(500).json({ error: err.message });
-      return;
-    }
-    res.json({
-      message: 'success',
-      data: rows
-    });
-  });
-});*/
-
-
-
 // WHEN I choose to add an employee
 // THEN I am prompted to enter the employee’s first name, last name, role, and manager, and that employee is added to the database
 router.post('/employees', ({ body }, res) => {
