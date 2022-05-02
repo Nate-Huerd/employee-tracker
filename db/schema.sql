@@ -1,14 +1,14 @@
 /* DROP TABLE IF EXISTS ; */
 DROP TABLE IF EXISTS employees;
-DROP TABLE IF EXISTS roles;
-DROP TABLE IF EXISTS departments;
+CREATE DATABASE employees;
+
+USE employees;
 
 CREATE TABLE departments (
   id INTEGER PRIMARY KEY,
   name VARCHAR(30) NOT NULL,
 );
 
-/* why is role not white? */
 CREATE TABLE roles (
   id INTEGER PRIMARY KEY,
   title VARCHAR(30),
